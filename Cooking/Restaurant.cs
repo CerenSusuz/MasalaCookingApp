@@ -6,11 +6,19 @@ namespace MasalaCookingApp.Cooking
 {
     public class Restaurant
     {
-        public void CookMasala(ICooker cooker, Country country)
+        public void CookMasala(ICooker cooker, Country country, DateTime currentTime)
         {
-            IRecipeFactory factory = new BasicRecipeFactory();
+            IRecipeFactory factory;
+
+            if (IsSummer(currentTime))
+                factory = new SummerRecipeFactory();
+            else
+                factory = new BasicRecipeFactory();
+
             var recipe = factory.GetRecipe(country);
             recipe.Cook(cooker);
         }
+
+        private bool IsSummer(DateTime date) => date.Month is >= 6 and <= 8;
     }
 }
