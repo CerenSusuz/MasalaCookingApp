@@ -8,13 +8,16 @@ class Program
         var restaurant = new Restaurant();
         var cooker = new MockCooker();
 
-        Console.WriteLine("India Masala:");
-        restaurant.CookMasala(cooker, Country.India);
+        var summer = new DateTime(2024, 7, 15);
+        var winter = new DateTime(2024, 12, 15);
 
-        Console.WriteLine("\nUkraine Masala:");
-        restaurant.CookMasala(cooker, Country.Ukraine);
+        Console.WriteLine("🍛 India Summer Masala:");
+        restaurant.CookMasala(cooker, Country.India, summer);
 
-        Console.WriteLine("\nEngland Masala:");
-        restaurant.CookMasala(cooker, Country.England);
+        Console.WriteLine("\nUkraine Winter Masala:");
+        restaurant.CookMasala(cooker, Country.Ukraine, winter);
+
+        Console.WriteLine("\nEngland Summer Masala:");
+        restaurant.CookMasala(cooker, Country.England, summer);
     }
 }
