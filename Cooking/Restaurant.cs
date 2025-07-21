@@ -19,6 +19,7 @@ namespace MasalaCookingApp.Cooking
             recipe.Cook(cooker);
         }
 
-        private bool IsSummer(DateTime date) => date.Month is >= 6 and <= 8;
+        private static bool IsSummer(DateTime date) => date.Month is >= 6 and <= 8;
+
     }
 }
